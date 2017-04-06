@@ -1,2 +1,2 @@
 # TableService
-G1 de Engenharia de Software
+Programa destinado a ajudar o serviço de mesas em um restaurante.
