@@ -16,13 +16,31 @@ local function exibir_mesas()
     end
 end
 
+local function mesa_livre(numero)
+    mesa[numero][1] = Livre
+end
+
+local function mesa_ocupada(numero)
+    mesa[numero][1] = Ocupada
+end
+
+local function mesa_reservada(numero)
+    mesa[numero][1] = Reservada
+end
+
 function mudar_mesa(numero, estado)
     numero = tonumber(numero)
 
-    print(numero, estado)
+    if estado == LIVRE then
+    elseif estado == OCUPADO then
+    elseif estado == RESERVADO then
+    else print(Estado_nao_reconhecido)
     
     exibir_mesas()
 end
 
+function ajuda()
+    print(Ajuda)
+end
 
 
