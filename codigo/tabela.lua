@@ -18,29 +18,38 @@ end
 
 local function mesa_livre(numero)
     mesa[numero][1] = Livre
+	mesa[numero][3] = "NA"
 end
 
 local function mesa_ocupada(numero)
-    mesa[numero][1] = Ocupada
+    mesa[numero][1] = Ocupado
+	mesa[numero][3] = os.date("%H" .. ":" .. "%M")
 end
 
 local function mesa_reservada(numero)
-    mesa[numero][1] = Reservada
+    mesa[numero][1] = Reservado
+	
+	print(Pedir_a_hora_da_reserva)
+	horario = io.read()
+	
+	mesa[numero][3] = horario
 end
+
 
 function mudar_mesa(numero, estado)
     numero = tonumber(numero)
 
     if estado == LIVRE then
+		print("Mesa livre")
+		mesa_livre(numero)
     elseif estado == OCUPADO then
+		mesa_ocupada(numero)
     elseif estado == RESERVADO then
-    else print(Estado_nao_reconhecido)
+		mesa_reservada(numero)
+    else
+		print(Estado_nao_reconhecido)
+	end
     
     exibir_mesas()
 end
-
-function ajuda()
-    print(Ajuda)
-end
-
 
