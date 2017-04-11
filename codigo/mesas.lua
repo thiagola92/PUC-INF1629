@@ -1,0 +1,12 @@
+mesa={}
+mesa[1] = {"Livre","2", "-1"}
+mesa[2] = {"Livre","2", "-1"}
+mesa[3] = {"Ocupado","2", "13:00"}
+mesa[4] = {"Livre","4", "-1"}
+mesa[5] = {"Ocupado","4", "13:00"}
+mesa[6] = {"Livre","4", "-1"}
+mesa[7] = {"Livre","6", "-1"}
+mesa[8] = {"Ocupado","6", "13:00"}
+mesa[9] = {"Reser.","6", "14:00"}
+mesa[10] = {"Ocupado","8", "13:00"}
+mesa["Mesa"] = {"Estado","Lugares","Horario"}
