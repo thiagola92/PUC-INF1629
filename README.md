@@ -1,7 +1,7 @@
-# TableService 0
+# TableService 0 #
 Programa destinado a ajudar o serviço de mesas em um restaurante.
 
-# Como usar
+# Como usar #
 Abrir o prompt de comando nessa pasta
 ```
 C:...\TableService-master>lua
@@ -9,7 +9,7 @@ Lua 5.1.4  Copyright (C) 1994-2008 Lua.org, PUC-Rio
 > dofile("run.lua")
 ```
 
-__Comandos__    
+## Comandos ##   
 mudar_mesa(numero_da_mesa, estado_da_mesa)
 * Numero da mesa - Número entre 1 e o número de mesas registradas em codigo/mesas.lua
 * Estado da mesa - As opções são LIVRE, OCUPADO E RESERVADO.
@@ -62,7 +62,7 @@ Mesa    Estado  Lugares Horario
 ----------------------------------------------------------
 ```
 
-# Pastas
+# Pastas #
 __codigo__    
 Todo o funcionamento do software se encontra nessa pasta, todos arquivos lua ou txt necessários.
 
