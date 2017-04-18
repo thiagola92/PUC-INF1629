@@ -36,11 +36,10 @@ local function mesa_reservada(numero)
 end
 
 
-function mudar_mesa(numero, estado)
+function mesa_estado(numero, estado)
     numero = tonumber(numero)
 
     if estado == LIVRE then
-		print("Mesa livre")
 		mesa_livre(numero)
     elseif estado == OCUPADO then
 		mesa_ocupada(numero)
@@ -53,3 +52,20 @@ function mudar_mesa(numero, estado)
     exibir_mesas()
 end
 
+function mudar_mesa(numero, estado, lugares, horario)
+    numero = tonumber(numero)
+
+    mesa[numero][1] = estado
+    mesa[numero][2] = lugares
+    mesa[numero][3] = horario
+    
+    exibir_mesas()
+end
+
+function adicionar_mesa(numero, estado, lugares, horario)
+    numero = tonumber(numero)
+
+    mesa[numero] = {estado, lugares, horario}
+
+    exibir_mesas()
+end

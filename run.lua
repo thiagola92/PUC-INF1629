@@ -1,4 +1,4 @@
 require "codigo/enumeracao"
-require "codigo/texto"
+require "codigo/textos"
 require "codigo/mesas"
-require "codigo/tabela"
+require "codigo/main"
