@@ -9,7 +9,7 @@ Lua 5.1.4  Copyright (C) 1994-2008 Lua.org, PUC-Rio
 > dofile("run.lua")
 ```
 
-__Comandos__
+__Comandos__    
 mudar_mesa(numero_da_mesa, estado_da_mesa)
 * Numero da mesa - Número entre 1 e o número de mesas registradas em codigo/mesas.lua
 * Estado da mesa - As opções são LIVRE, OCUPADO E RESERVADO.
@@ -62,16 +62,12 @@ Mesa    Estado  Lugares Horario
 ----------------------------------------------------------
 ```
 
-Após isso você pode escrever:    
-__ajuda()__    
-Para ver todas as ações que você pode fazer com as mesas.
-
 # Pastas
 __codigo__    
 Todo o funcionamento do software se encontra nessa pasta, todos arquivos lua ou txt necessários.
 
 __diagramas__
-Qualquer diagrama que ajudar o entendimento do developer ou usuário.
+Qualquer diagrama que possa ajudar o entendimento do desenvolvedor ou usuário.
 
 __relatorios__
 Qualquer mudança será explicada no relatório da versão.
