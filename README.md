@@ -66,8 +66,8 @@ Mesa    Estado  Lugares Horario
 __codigo__    
 Todo o funcionamento do software se encontra nessa pasta, todos arquivos lua ou txt necessários.
 
-__diagramas__
+__diagramas__    
 Qualquer diagrama que possa ajudar o entendimento do desenvolvedor ou usuário.
 
-__relatorios__
+__relatorios__    
 Qualquer mudança será explicada no relatório da versão.
