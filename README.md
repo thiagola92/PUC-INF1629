@@ -10,7 +10,7 @@ Lua 5.1.4  Copyright (C) 1994-2008 Lua.org, PUC-Rio
 ```
 
 ## Comandos ##   
-mudar_mesa(numero_da_mesa, estado_da_mesa)
+__mudar_mesa(numero_da_mesa, estado_da_mesa)__
 * Numero da mesa - Número entre 1 e o número de mesas registradas em codigo/mesas.lua
 * Estado da mesa - As opções são LIVRE, OCUPADO E RESERVADO.
 Exemplo
