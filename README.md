@@ -14,10 +14,8 @@ Lua 5.1.4  Copyright (C) 1994-2008 Lua.org, PUC-Rio
 ```
 
 ## Comandos ##   
-__mudar_mesa(numero_da_mesa, estado_da_mesa)__
-* Numero da mesa - Número entre 1 e o número de mesas registradas em codigo/mesas.lua
-* Estado da mesa - As opções são LIVRE, OCUPADO E RESERVADO.
-Exemplo
+
+__exibir_mesas()__  
 ```
 > mudar_mesa(5, OCUPADO)
 ----------------------------------------------------------
@@ -32,38 +30,50 @@ Exemplo
 9       Livre   6       NA
 10      Livre   8       NA
 Mesa    Estado  Lugares Horario
-----------------------------------------------------------
+```
+
+__mesa_estado(numero, estado)__  
+* numero - Número da mesa, mesa precisa estar registrada antes no sistema.  
+* estado - As opções de estado da mesa são LIVRE, OCUPADO E RESERVADO.  
+```
+> mudar_mesa(5, OCUPADO)
 > mudar_mesa(5, LIVRE)
-Mesa livre
-----------------------------------------------------------
-1       Livre   2       NA
-2       Livre   2       NA
-3       Livre   2       NA
-4       Livre   4       NA
-5       Livre   4       NA
-6       Livre   4       NA
-7       Livre   6       NA
-8       Livre   6       NA
-9       Livre   6       NA
-10      Livre   8       NA
-Mesa    Estado  Lugares Horario
-----------------------------------------------------------
 > mudar_mesa(6, RESERVADO)
 Diga o horario da reserva
 10:00
-----------------------------------------------------------
-1       Livre   2       NA
-2       Livre   2       NA
-3       Livre   2       NA
-4       Livre   4       NA
-5       Livre   4       NA
-6       Reser.  4       10:00
-7       Livre   6       NA
-8       Livre   6       NA
-9       Livre   6       NA
-10      Livre   8       NA
-Mesa    Estado  Lugares Horario
-----------------------------------------------------------
+```
+
+__mesa_lugares(numero, lugares)__   
+* numero - Número da mesa, mesa precisa estar registrada antes no sistema.  
+* lugares - Número de pessoas que cabem naquela mesa.  
+```
+> mesa_lugares(5, 10)
+> mesa_lugares(5, 30)
+> mesa_lugares(5, 2)
+```
+
+__mesa_horario(numero, horario)__   
+* numero - Número da mesa, mesa precisa estar registrada antes no sistema.
+* horario - Se a mesa estiver ocupada ou reservada você pode botar um horário para ela, esse valor deve ser passado dentro de aspas.  
+```
+> mesa_horario(5, "10:00")
+> mesa_horario(5, "20:00")
+> mesa_horario(5, "15:00")
+```
+
+__adicionar_mesa(numero, estado, lugares, horario)__   
+* numero - Número da mesa, mesa precisa estar registrada antes no sistema.  
+* estado - As opções de estado da mesa são LIVRE, OCUPADO E RESERVADO.  
+* lugares - Número de pessoas que cabem naquela mesa.  
+* horario - Se a mesa estiver ocupada ou reservada você pode botar um horário para ela, esse valor deve ser passado dentro de aspas.  
+```
+> adicionar_mesa(5, LIVRE, 10, "NA")
+```
+
+__remover_mesa(numero)__
+* numero - Número da mesa que vai ser deletada, mesa precisa estar registrada antes no sistema.  
+```
+> remover_mesa(5)
 ```
 
 # Pastas #
