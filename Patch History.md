@@ -1,4 +1,4 @@
-# Versão 0 #
+# ---Versão 0--- #
 __Data__: 09/04/2017
 
 Criado 3 pastas
@@ -20,7 +20,7 @@ Qualquer texto que aparece na tela, para fácil alteração mais tarde.
 Foi feito um diagrama de hierarquia, embora o programa não tivesse muitas coisas com o que usar como módulo.    
 Tentei seguir a regra 3 ([3,6] módulos).
 
-# Versão 1 #
+# ---Versão 1--- #
 __Data__: 09/04/2017
 
 ## diagramas ##
@@ -33,7 +33,7 @@ Foi criada uma função para cada estado de mesa.
 __texto.lua__  
 Para facilitar mudar a lingua dos textos que aparecem no programa, foi criado um texto.lua que contém qualquer string exibida para o usuário.
 
-# Versão 2 #
+# ---Versão 2--- #
 __Data__: 10/04/2017
 
 ## codigo ##
@@ -48,7 +48,7 @@ Função mesa_reservada() agora deixa a mesa como Reservada e o horario da reser
 __texto.lua__  
 Retirado o texto que "ajuda()" exibia.
 
-# Versão 3 #
+# ---Versão 3--- #
 __Data__: 11/04/2017
 
 ## Relatorios ##
