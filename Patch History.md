@@ -51,9 +51,21 @@ Retirado o texto que "ajuda()" exibia.
 # ---Versão 3--- #
 __Data__: 11/04/2017
 
-## Relatorios ##
+## relatorios ##
 Pasta deletada, todo o conteúdo sobre atualizações vai ficar em "Patch History.md". Consequentemente os seguintes arquivos com histórico foram deletados.  
 version 000.md  
 version 001.md  
 version 002.md  
 
+# ---Versão 4--- #
+__Data__: 11/04/2017
+
+## codigo ##
+__main.lua__  
+Adicionado a pré-condição e pós-condição em todas as funções.  
+exibir_mesas() é global para que o atendente possa visualizar quando quiser.  
+mesa_estado() verifica se a mesa existe antes de tentar fazer alteração.  
+mudar_mesa() foi deletado pois o usuário não deveria ter tanto poder sobre as mesas a esse ponto, onde podia até decidir o estado da mesa fora dos 3 padrões.  
+mesa_lugares() altera o número de lugares em uma mesa.  
+mesa_horario() altera o horario de uma mesa.  
+remover_mesa() deleta uma das mesas da tabela.  
