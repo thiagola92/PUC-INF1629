@@ -47,3 +47,13 @@ Função mesa_reservada() agora deixa a mesa como Reservada e o horario da reser
 
 __texto.lua__  
 Retirado o texto que "ajuda()" exibia.
+
+# Versão 3 #
+__Data__: 11/04/2017
+
+## Relatorios ##
+Pasta deletada, todo o conteúdo sobre atualizações vai ficar em "Patch History.md". Consequentemente os seguintes arquivos com histórico foram deletados.  
+version 000.md  
+version 001.md  
+version 002.md  
+
