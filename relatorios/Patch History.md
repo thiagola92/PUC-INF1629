@@ -1,4 +1,6 @@
 # Versão 0 #
+Data: 09/04/2017
+
 Criado 3 pastas
 * codigo - qualquer codigo ou coisa essencial para o programa rodar.
 * diagramas - qualquer diagrama que ajude o developer ou usuário entender.
@@ -19,6 +21,7 @@ Foi feito um diagrama de hierarquia, embora o programa não tivesse muitas coisa
 Tentei seguir a regra 3 ([3,6] módulos).
 
 # Versão 1 #
+Data: 09/04/2017
 
 ## diagramas ##
 renomeando "hierarquia" para "modulo"
@@ -30,6 +33,7 @@ Foi criada uma função para cada estado de mesa.
 __texto.lua__
 
 # Versão 2 #
+Data: 10/04/2017
 
 ## codigo ##
 __tabela.lua__    
