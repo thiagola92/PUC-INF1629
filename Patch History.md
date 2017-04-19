@@ -69,3 +69,6 @@ mudar_mesa() foi deletado pois o usuário não deveria ter tanto poder sobre as 
 mesa_lugares() altera o número de lugares em uma mesa.  
 mesa_horario() altera o horario de uma mesa.  
 remover_mesa() deleta uma das mesas da tabela.  
+
+## diagrama ##
+Diagrama dos módulos atualizado.
