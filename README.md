@@ -1,4 +1,6 @@
-# TableService 0 #
+Thiago Lages de Alencar - 1121561
+
+# TableService #
 Programa destinado a ajudar o serviço de mesas em um restaurante.
 
 ![diagrama](https://github.com/thiagola92/TableService/blob/master/diagramas/modulo_002.jpg)
