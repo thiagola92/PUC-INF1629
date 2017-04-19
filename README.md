@@ -1,6 +1,8 @@
 # TableService 0 #
 Programa destinado a ajudar o serviço de mesas em um restaurante.
 
+![diagrama](https://github.com/thiagola92/TableService/blob/master/diagramas/modulo_002.jpg)
+
 # Como usar #
 Abrir o prompt de comando nessa pasta
 ```
@@ -68,6 +70,3 @@ Todo o funcionamento do software se encontra nessa pasta, todos arquivos lua ou 
 
 __diagramas__    
 Qualquer diagrama que possa ajudar o entendimento do desenvolvedor ou usuário.
-
-__relatorios__    
-Qualquer mudança será explicada no relatório da versão.
