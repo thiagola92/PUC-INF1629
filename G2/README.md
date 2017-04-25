@@ -1,5 +1,5 @@
-Nome: Thiago Lages de Alencar    
-Matricula: 1121561
+Nome: Thiago Lages de Alencar e Miguel Jos[e GOn;alves da Silva
+Matricula: 1121561 e 1111284
 
 # Princípios de Engenharia de Software #
 Objetivo do trabalho é pegar 4 estilos do livro "Exercises in Programming Style" e reescrever em Lua. Tem que usar as [6 regras da disciplina](https://pes2006.wordpress.com/2006/03/15/disciplina/).
