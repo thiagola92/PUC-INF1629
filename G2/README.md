@@ -1,8 +1,8 @@
-Nome: Thiago Lages de Alencar 
+Nome: Thiago Lages de Alencar    
 Matricula: 1121561
 
-# PrincÌpios de Engenharia de Software #
-Objetivo do trabalho È pegar 4 estilos do livro "Exercises in Programming Style" e reescrever em Lua. Tem que usar as [6 regras da disciplina](https://pes2006.wordpress.com/2006/03/15/disciplina/).
+# Princ√≠pios de Engenharia de Software #
+Objetivo do trabalho √© pegar 4 estilos do livro "Exercises in Programming Style" e reescrever em Lua. Tem que usar as [6 regras da disciplina](https://pes2006.wordpress.com/2006/03/15/disciplina/).
 
-# Livro Di·rio #
-* 25/04/2017: CriaÁ„o do github e preparaÁ„o para comeÁar o trabalho.
+# Livro Di√°rio #
+* 25/04/2017: Cria√ß√£o do github e prepara√ß√£o para come√ßar o trabalho.
