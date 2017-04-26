@@ -1,4 +1,4 @@
-Nome: Thiago Lages de Alencar e Miguel José Gonçalves da Silva    
+Dupla: Thiago Lages de Alencar e Miguel José Gonçalves da Silva    
 Matricula: 1121561 e 1111284
 
 # Princípios de Engenharia de Software #
