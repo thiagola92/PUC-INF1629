@@ -81,12 +81,17 @@ function frequencies()
         end
     end
     
-    for i=1, #word_freqs do
-        print(word_freqs[i][1] .. "=>" .. word_freqs[i][2])
-    end
 end
 
+function compare(a,b)
+    return a[2] > b[2]
+end
+        
 function sort()
+    --
+    -- Sorts word_freqs by frequency
+    --
+    table.sort(word_freqs, compare)
 end
 
 
@@ -98,3 +103,8 @@ filter_chars_and_normalize()
 scan()
 remove_stop_words()
 frequencies()
+sort()
+
+for i=1, 25 do
+    print(word_freqs[i][1] .. "=>" .. word_freqs[i][2])
+end
