@@ -4,40 +4,43 @@
 -- Versão 1.0
 -- Linhas: 
 
--- The shared mutable data
-data = {}
-words = {}
-word_freqs = {}
-
 --
 -- The procedures
 --
 function read_file(path_to_file)
     --
-    -- Takes a path to a file and assigns the entire
-    -- contents of the file to the global variable data
+    -- Takes a path to a file and returns the entire
+    -- contents of the file as a string
     --
     io.input(path_to_file)
-    data = io.read("*all")
+    return io.read("*all")
 end
 
-function filter_chars_and_normalize()
+function filter_chars_and_normalize(str_data)
     --
-    -- Replaces all nonalphanumeric chars in data with white space
+    -- Takes a string and returns a copy with all nonalphanumeric 
+    -- chars replaced by white space
     --
-    data = string.lower(string.gsub(data, "[^%w]", " "))
+    return string.lower(string.gsub(str_data, "[^%w]", " "))
 end
 
-function scan()
+function scan(str_data)
     --
-    -- Scans data for words, filling the global variable words
+    -- Takes a string and scans for words, returning
+    -- a list of words.
     --
-    for i in string.gmatch(data, "%w+") do
+    words = {}
+    for i in string.gmatch(str_data, "%w+") do
         words[#words + 1] = i
     end
+    return words
 end
 
-function remove_stop_words()
+function remove_stop_words(word_list)
+    -- 
+    -- Takes a list of words and returns a copy with all stop 
+    -- words removed 
+    --
     io.input("stop_words.txt")
     local stop_words = {}
     for i in string.gmatch(io.read("*all"), "%w+") do
@@ -51,60 +54,68 @@ function remove_stop_words()
     end
     
     indexes = {}
-    for i=1, #words do
-        if stop_words[words[i]] then
+    for i=1, #word_list do
+        if stop_words[word_list[i]] then
             indexes[#indexes + 1] = i
         end
     end
     for i=1, #indexes do
-        table.remove(words, indexes[i] - i + 1)
+        table.remove(word_list, indexes[i] - i + 1)
     end
+    
+    return word_list
     
 end
 
-function frequencies()
+function frequencies(word_list)
     --
-    -- Creates a list of pairs associating
-    -- words with frequencies 
+    -- Takes a list of words and returns a dictionary associating
+    -- words with frequencies of occurrence
     --
-    for i=1, #words do
+    word_freqs = {}
+    for i=1, #word_list do
         found = false
         for _,v in pairs(word_freqs) do
-            if v[1] == words[i] then
+            if v[1] == word_list[i] then
                 v[2] = v[2] + 1
                 found = true
                 break
             end
         end
         if not found then
-            word_freqs[#word_freqs + 1] = {words[i], 1}
+            word_freqs[#word_freqs + 1] = {word_list[i], 1}
         end
     end
     
+    return word_freqs
 end
 
 function compare(a,b)
     return a[2] > b[2]
 end
         
-function sort()
+function sort(word_freq)
     --
-    -- Sorts word_freqs by frequency
+    -- Takes a dictionary of words and their frequencies
+    -- and returns a list of pairs where the entries are
+    -- sorted by frequency 
     --
     table.sort(word_freqs, compare)
+    
+    return word_freq
+end
+
+function print_all(word_freq)
+    --
+    -- Takes a list of pairs where the entries are sorted by frequency and print them recursively.
+    --
+    for i=1, 25 do
+        print(word_freq[i][1] .. "=>" .. word_freq[i][2])
+    end
 end
 
 
 --
 -- The main function
 --
-read_file(arg[1])
-filter_chars_and_normalize()
-scan()
-remove_stop_words()
-frequencies()
-sort()
-
-for i=1, 25 do
-    print(word_freqs[i][1] .. "=>" .. word_freqs[i][2])
-end
+print_all(sort(frequencies(remove_stop_words(scan(filter_chars_and_normalize(read_file(arg[1])))))))

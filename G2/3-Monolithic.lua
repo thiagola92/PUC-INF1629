@@ -91,7 +91,6 @@ for line in io.lines() do
     end
 end
 
-print("\n###Output###")
 for j=1, 25 do
     print(word_freqs[j][1] .. "=>" .. word_freqs[j][2])
 end
