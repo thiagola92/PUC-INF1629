@@ -61,7 +61,7 @@ function count(word_list, stopwords, wordfreqs, index)
 end
 
 function wf_print(wordfreq, index)
-    if index == #wordfreq + 1 then
+    if index == 25 + 1 then
         return
     end
     
@@ -75,4 +75,4 @@ wordfreqs = {}
 
 count(word_list, stopwords, wordfreqs, 1)
 table.sort(wordfreqs, compare)
-wf_print(wordfreq, 1)
+wf_print(wordfreqs, 1)
