@@ -39,7 +39,7 @@ end
 
 function remove_stop_words()
     io.input("stop_words.txt")
-    stop_words = {}
+    local stop_words = {}
     for i in string.gmatch(io.read("*all"), "%w+") do
         stop_words[i] = 1
     end
@@ -60,10 +60,33 @@ function remove_stop_words()
         table.remove(words, indexes[i] - i + 1)
     end
     
+end
+
+function frequencies()
+    --
+    -- Creates a list of pairs associating
+    -- words with frequencies 
+    --
     for i=1, #words do
-        print(words[i])
+        found = false
+        for _,v in pairs(word_freqs) do
+            if v[1] == words[i] then
+                v[2] = v[2] + 1
+                found = true
+                break
+            end
+        end
+        if not found then
+            word_freqs[#word_freqs + 1] = {words[i], 1}
+        end
     end
     
+    for i=1, #word_freqs do
+        print(word_freqs[i][1] .. "=>" .. word_freqs[i][2])
+    end
+end
+
+function sort()
 end
 
 
@@ -74,3 +97,4 @@ read_file(arg[1])
 filter_chars_and_normalize()
 scan()
 remove_stop_words()
+frequencies()
