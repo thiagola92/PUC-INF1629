@@ -13,8 +13,13 @@ io.input("stop_words.txt")
 f = io.read("*all")
 f = string.gsub(f, ",", " ")
 stop_words = {}
-for i in string.gmatch(f, "%S+") do
+for i in string.gmatch(f, "%w+") do
     stop_words[i] = 1
+end
+
+one_letter_words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
+for i=1, #one_letter_words do
+    stop_words[one_letter_words[i]] = 1
 end
 
 -- iterate through the file one line at a time
@@ -37,7 +42,7 @@ for line in io.lines() do
             if string.match(character, "%w") == nil or c == #line then
                 -- We found the end of a word. Process it
                 local found = false
-                local word = string.gsub(string.lower(string.sub(line, start_char, c)), "%s", "")
+                local word = string.gsub(string.lower(string.sub(line, start_char, c)), "%W", "")
                 
                 -- Ignore stop words
                 if stop_words[word] == nil then
