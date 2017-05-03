@@ -21,13 +21,13 @@ lua 3-Monolithic.lua input.txt
 * 26/4 - Reunião da escolha dos estilos.
 
 * 02/05 - desenvolvimento do primeiro estilo: Monotithic
-* 02/05 - Adequação do acima código usando as regras vistas em sala de aula
+* 02/05 - Adequação do código acima usando as regras vistas em sala de aula
 
 * 02/05 - desenvolvimento do primeiro estilo: 
-* 02/05 - Adequação do acima código usando as regras vistas em sala de aula
+* 02/05 - Adequação do código acima usando as regras vistas em sala de aula
 
 * 02/05 - desenvolvimento do primeiro estilo: 
-* 02/05 - Adequação do acima código usando as regras vistas em sala de aula
+* 02/05 - Adequação do código acima usando as regras vistas em sala de aula
 
 * 03/05 - Revisão conjunta geral do código
 
