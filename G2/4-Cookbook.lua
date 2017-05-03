@@ -2,7 +2,7 @@
 -- Autor: Thiago Lages de Alencar
 -- 03/05/2017
 -- Versão 1.0
--- Linhas: 
+-- Linhas: ~110
 
 -- The shared mutable data
 data = {}
