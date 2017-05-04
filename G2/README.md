@@ -5,15 +5,19 @@ Matricula: 1121561 e 1111284
 Objetivo do trabalho é pegar 4 estilos do livro "Exercises in Programming Style" e reescrever em Lua. Tem que usar as [6 regras da disciplina](https://pes2006.wordpress.com/2006/03/15/disciplina/ ).
 
 # Exemplo de como usar #
+Digite no prompt de comando
 ```
 lua 3-Monolithic.lua input.txt
 ```
+ou
 ```
 lua 4-Cookbook.lua input.txt
 ```
+ou
 ```
 lua 5-Pipeline.lua input.txt
 ```
+ou
 ```
 lua 7-Infinite_Mirror.lua input.txt
 ```
