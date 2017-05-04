@@ -66,7 +66,7 @@ function count(word_list, stopwords, wordfreqs, index)
             end
         end
         -- Process the tail 
-        count(word_list, stopwords, wordfreqs, index+1)
+        return count(word_list, stopwords, wordfreqs, index+1)
     end
 end
 
