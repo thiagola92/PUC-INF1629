@@ -83,3 +83,6 @@ good=>201
 - Um incomodo que sentimos foi a contagem do array começar em 1 ao invés de 0. Isso foi resolvido colocando o contador iniciando em 1.
 - Nós testamos o código com um texto pequeno e um gigante, no pequeno não teve problemas, mas no grande a letra "s" foi considerada uma palavra por contas de frases como "elisabeth's house". Creio que o ' separe as palavras e assim esteja causando esse erro.
 
+03/05
+- Foi identificado no código da autora, que ela adicionou no filtro, palavras de uma letra só. Pois não são palavras, por isso que a letra s não aparece no contador de palavras dela. Fizemos uma alteração no código e o problema foi resolvido.
+- Discutimos uma mudança do nome de variáveis para um melhor entendimento do código (uma das regras vistas em aula).
