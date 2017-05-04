@@ -1,8 +1,8 @@
 -- Titulo: 5-Pipeline
--- Autor: 
+-- Autor: Miguel José Gonçalves da Silva
 -- 03/05/2017
 -- Versão 1.1
--- Linhas: 119
+-- Linhas: ~116
 
 -- Pega o caminho para um arquivo e retorna todo o conteudo em uma string
 -- PRE: Conteudo do arquivo desconhecido
@@ -23,10 +23,6 @@ end
 -- PRE: String com palavras
 -- POS: Retorna um array com todas as palavras na string
 function scan(str_data)
-    --
-    -- Takes a string and scans for words, returning
-    -- a list of words.
-    --
     words = {}
     for i in string.gmatch(str_data, "%w+") do
         words[#words + 1] = i
@@ -34,18 +30,15 @@ function scan(str_data)
     return words
 end
 
+-- Retira todas as palavras indesejadas da lista passada
+-- PRE: Recebe um Array com todas as palavras alphanumericas
+-- POS: Retorna um Array com todas as palavras menos as indesejadas
 function remove_stop_words(word_list)
-    -- 
-    -- Takes a list of words and returns a copy with all stop 
-    -- words removed 
-    --
     io.input("stop_words.txt")
     local stop_words = {}
     for i in string.gmatch(io.read("*all"), "%w+") do
         stop_words[i] = 1
     end
-    
-    -- add single-letter words
     one_letter_words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
     for i=1, #one_letter_words do
         stop_words[one_letter_words[i]] = 1
@@ -65,6 +58,9 @@ function remove_stop_words(word_list)
     
 end
 
+-- Conta o número de vezes que cada palavra ocorre
+-- PRE: Recebe a lista de todas as palavras e com repetição
+-- POS: Faz uma lista com o par [palavra, vezes ocorrida]
 function frequencies(word_list)
     --
     -- Takes a list of words and returns a dictionary associating
@@ -88,21 +84,23 @@ function frequencies(word_list)
     return word_freqs
 end
 
+-- Função auxiliar que compara para ver se as palavras precisão trocar de posição
 function compare(posicao1,posicao2)
     return posicao1[2] > posicao2[2]
 end
-        
+
+-- Responsável por organizar por ordem decrescente a lista de palavra e frequência
+-- PRE: Recebe uma lista de pares palavra e frequência desorganizada
+-- POS: Retorna a mesma lista recebida porém em ordem decrescente
 function sort(word_freq)
-    --
-    -- Takes a dictionary of words and their frequencies
-    -- and returns a list of pairs where the entries are
-    -- sorted by frequency 
-    --
     table.sort(word_freqs, compare)
     
     return word_freq
 end
 
+-- Exibi as 25 palavras com maior frequência no console
+-- PRE: Recebe a lista
+-- POS: Exibi as 25 palavras mais frequentes
 function print_all(word_freq)
     --
     -- Takes a list of pairs where the entries are sorted by frequency and print them recursively.
@@ -113,7 +111,5 @@ function print_all(word_freq)
 end
 
 
---
 -- The main function
---
 print_all(sort(frequencies(remove_stop_words(scan(filter_chars_and_normalize(read_file(arg[1])))))))
