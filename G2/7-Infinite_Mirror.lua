@@ -30,8 +30,8 @@ function read_words(path)
     return words
 end
 
-function compare(a,b)
-    return a[2] > b[2]
+function compare(posicao1,posicao2)
+    return posicao1[2] > posicao2[2]
 end
 
 function count(word_list, stopwords, wordfreqs, index)

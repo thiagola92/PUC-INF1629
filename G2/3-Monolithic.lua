@@ -12,10 +12,10 @@ word_freqs = {}
 -- PRE: Todas as palavras que desajamos ignorar estão armazenadas em "stop_words.txt"
 -- POS: Existe um Array com cada palavra que desejamos ignorar
 io.input("stop_words.txt")
-f = io.read("*all")
-f = string.gsub(f, ",", " ")
+file = io.read("*all")
+file = string.gsub(file, ",", " ")
 stop_words = {}
-for i in string.gmatch(f, "%w+") do
+for i in string.gmatch(file, "%w+") do
     stop_words[i] = 1
 end
 one_letter_words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
@@ -96,4 +96,3 @@ end
 for j=1, 25 do
     print(word_freqs[j][1] .. "=>" .. word_freqs[j][2])
 end
-

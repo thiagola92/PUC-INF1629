@@ -88,8 +88,8 @@ function frequencies(word_list)
     return word_freqs
 end
 
-function compare(a,b)
-    return a[2] > b[2]
+function compare(posicao1,posicao2)
+    return posicao1[2] > posicao2[2]
 end
         
 function sort(word_freq)

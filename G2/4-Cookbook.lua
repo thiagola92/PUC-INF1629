@@ -84,8 +84,8 @@ function frequencies()
 end
 
 -- Função auxiliar para comparar se deve trocar de lugar duas posições
-function compare(a,b)
-    return a[2] > b[2]
+function compare(posicao1,posicao2)
+    return posicao1[2] > posicao2[2]
 end
 
 -- Organiza para ficar maior frequência primeiro e menor frequência por ultimo
