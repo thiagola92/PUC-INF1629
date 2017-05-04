@@ -4,30 +4,68 @@ Matricula: 1121561 e 1111284
 # Princípios de Engenharia de Software #
 Objetivo do trabalho é pegar 4 estilos do livro "Exercises in Programming Style" e reescrever em Lua. Tem que usar as [6 regras da disciplina](https://pes2006.wordpress.com/2006/03/15/disciplina/ ).
 
-# Como usar #
+# Exemplo de como usar #
 ```
 lua 3-Monolithic.lua input.txt
 ```
+```
+lua 4-Cookbook.lua input.txt
+```
+```
+lua 5-Pipeline.lua input.txt
+```
+```
+lua 7-Infinite_Mirror.lua input.txt
+```
 
-# Livro Diário - Thiago #
-* 25/04/2017: Criação do github e preparação para começar o trabalho.
-* 27/04/2017: Começo da leitura do livro.
-* 02/05/2017: Desenvolvimento do programa no estilo Monolithic
+# Resultado para o texto pride-and-prejudice.txt #
+```
+mr=>786
+elizabeth=>635
+very=>488
+darcy=>418
+such=>395
+mrs=>343
+much=>329
+more=>327
+bennet=>323
+bingley=>306
+jane=>295
+miss=>283
+one=>275
+know=>239
+before=>229
+herself=>227
+though=>226
+well=>224
+never=>220
+sister=>218
+soon=>216
+think=>211
+now=>209
+time=>203
+good=>201
+```
 
 # Timeline das atividades #
 
-* 25/4 - Leitura do Livro
+* 25/04 - Criação do Github para a preparação do trabalho
 
-* 26/4 - Reunião da escolha dos estilos.
+* 25/04 - Leitura do Livro
 
-* 02/05 - desenvolvimento do primeiro estilo: Monotithic
+* 26/04 - Reunião da escolha dos estilos.
+
+* 02/05 - Desenvolvimento do primeiro estilo: Monotithic
 * 02/05 - Adequação do código acima usando as regras vistas em sala de aula
 
-* 02/05 - desenvolvimento do primeiro estilo: 
-* 02/05 - Adequação do código acima usando as regras vistas em sala de aula
+* 03/05 - Desenvolvimento do segundo estilo: Cookbook
+* 03/05 - Adequação do código acima usando as regras vistas em sala de aula
 
-* 02/05 - desenvolvimento do primeiro estilo: 
-* 02/05 - Adequação do código acima usando as regras vistas em sala de aula
+* 03/05 - Desenvolvimento do terceiro estilo: Pipeline
+* 03/05 - Adequação do código acima usando as regras vistas em sala de aula
+
+* 03/05 - Desenvolvimento do quarto estilo: Infinite Mirror
+* 03/05 - Adequação do código acima usando as regras vistas em sala de aula
 
 * 03/05 - Revisão conjunta geral do código
 
