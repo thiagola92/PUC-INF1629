@@ -23,6 +23,8 @@ ou
 lua 7-Infinite_Mirror.lua input.txt
 ```
 
+![Exemplo.png](Exemplo.png)
+
 # Resultado para o texto pride-and-prejudice.txt #
 ```
 mr=>786
