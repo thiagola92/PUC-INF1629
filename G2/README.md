@@ -5,7 +5,8 @@ Matricula: 1121561 e 1111284
 Objetivo do trabalho é pegar 4 estilos do livro "Exercises in Programming Style" e reescrever em Lua. Tem que usar as [6 regras da disciplina](https://pes2006.wordpress.com/2006/03/15/disciplina/ ).
 
 # Exemplo de como usar #
-Digite no prompt de comando
+* Faça o download do repositório, depois no prompt de comando caminhe até a pasta onde contém os arquivos.lua
+* Digite no prompt de comando
 ```
 lua 3-Monolithic.lua input.txt
 ```
