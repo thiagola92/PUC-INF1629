@@ -78,7 +78,6 @@ good=>201
 
 # Diário de Desenvolvimento #
 02/05
-
 - No início se teve uma dificuldade para transformar python em lua, mas no decorrer do desenvolvimento os obstáculos foram superados.
 - Foi necessário ler alguns textos, para se fazer a leitura de arquivo em lua
 - Tinha algumas coisas de expressão regular que foi necessário ser relembrado para o entendimento do código.
@@ -89,3 +88,6 @@ good=>201
 03/05
 - Foi identificado no código da autora, que ela adicionou no filtro, palavras de uma letra só. Pois não são palavras, por isso que a letra s não aparece no contador de palavras dela. Fizemos uma alteração no código e o problema foi resolvido.
 - Discutimos uma mudança do nome de variáveis para um melhor entendimento do código (uma das regras vistas em aula).
+
+04/05
+- Resolvido problema de stack overflow no estilo Infinite Mirror
