@@ -1,7 +1,7 @@
 -- Titulo: 4-Cookbook
 -- Autor: Thiago Lages de Alencar
 -- 03/05/2017
--- Versão 1.2
+-- Versão 1.3
 -- Linhas: ~110
 
 -- Toda informação que o programa vai compartilhar entre as funções

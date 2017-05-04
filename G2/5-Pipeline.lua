@@ -1,8 +1,8 @@
 -- Titulo: 5-Pipeline
 -- Autor: 
 -- 03/05/2017
--- Versão 1.0
--- Linhas: 
+-- Versão 1.1
+-- Linhas: 119
 
 -- Pega o caminho para um arquivo e retorna todo o conteudo em uma string
 -- PRE: Conteudo do arquivo desconhecido

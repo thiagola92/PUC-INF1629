@@ -1,7 +1,7 @@
 -- Titulo: 7-Infinite Mirror
 -- Autor: 
 -- 03/05/2017
--- Versão 1.0
+-- Versão 1.1
 -- Linhas: ~78
 
 function read_stop_words()
