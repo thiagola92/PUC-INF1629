@@ -12,14 +12,16 @@ function read_file(path_to_file)
     return io.read("*all")
 end
 
+-- Substitui todos os characters não alphanumericos de uma string por espaço
+-- PRE: Recebe uma string com characters não alphanúmericos
+-- POS: Retorna a string só que com os characters não alphanúmericos trocados por espaço e com os alphanúmericos em minusculo
 function filter_chars_and_normalize(str_data)
-    --
-    -- Takes a string and returns a copy with all nonalphanumeric 
-    -- chars replaced by white space
-    --
     return string.lower(string.gsub(str_data, "[^%w]", " "))
 end
 
+-- Pega uma string e retorna um Array com as palavras daquela string
+-- PRE: String com palavras
+-- POS: Retorna um array com todas as palavras na string
 function scan(str_data)
     --
     -- Takes a string and scans for words, returning
