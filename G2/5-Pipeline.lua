@@ -4,14 +4,10 @@
 -- Versão 1.0
 -- Linhas: 
 
---
--- The procedures
---
+-- Pega o caminho para um arquivo e retorna todo o conteudo em uma string
+-- PRE: Conteudo do arquivo desconhecido
+-- POS: Retorna o conteudo do arquivo em uma string
 function read_file(path_to_file)
-    --
-    -- Takes a path to a file and returns the entire
-    -- contents of the file as a string
-    --
     io.input(path_to_file)
     return io.read("*all")
 end

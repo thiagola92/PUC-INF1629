@@ -1,50 +1,47 @@
 -- Titulo: 4-Cookbook
 -- Autor: Thiago Lages de Alencar
 -- 03/05/2017
--- Versão 1.0
+-- Versão 1.2
 -- Linhas: ~110
 
--- The shared mutable data
+-- Toda informação que o programa vai compartilhar entre as funções
 data = {}
 words = {}
 word_freqs = {}
 
---
--- The procedures
---
+-- Lê o arquivo texto que desejamos pegar as palavras mais frequêntes
+-- PRE: data vazio
+-- POS: Todo o texto armazenado em data, em apenas uma string
 function read_file(path_to_file)
-    --
-    -- Takes a path to a file and assigns the entire
-    -- contents of the file to the global variable data
-    --
     io.input(path_to_file)
     data = io.read("*all")
 end
 
+-- Remove todo characters não alphanumerico
+-- PRE: data armzena o texto em uma string com characters não alphanumericos
+-- POS: data trocou todos characters não alphanumericos por espaços
 function filter_chars_and_normalize()
-    --
-    -- Replaces all nonalphanumeric chars in data with white space
-    --
     data = string.lower(string.gsub(data, "[^%w]", " "))
 end
 
+-- Passa pela a string em data e pega cada palavra e armazena em words
+-- PRE: words vazio e data com uma string
+-- POS: words é um Array de todas as palavras que aparecem no texto
 function scan()
-    --
-    -- Scans data for words, filling the global variable words
-    --
     for i in string.gmatch(data, "%w+") do
         words[#words + 1] = i
     end
 end
 
+-- Passa pelo Array words removendo palavras que não interessam, ou seja, que estão no stop_words.txt
+-- PRE: Palavras que não nos interessam no Array words
+-- POS: Array words sem a palavras no stop_words.txt
 function remove_stop_words()
     io.input("stop_words.txt")
     local stop_words = {}
     for i in string.gmatch(io.read("*all"), "%w+") do
         stop_words[i] = 1
     end
-    
-    -- add single-letter words
     one_letter_words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
     for i=1, #one_letter_words do
         stop_words[one_letter_words[i]] = 1
@@ -62,6 +59,9 @@ function remove_stop_words()
     
 end
 
+-- Cria uma lista com as palavras e frequência de cada uma delas
+-- PRE: Array word com todas as palavras que nos interessam e repetidas n vezes
+-- POS: Lista de todas palavras com a frequência que são usadas em word_freqs
 function frequencies()
     --
     -- Creates a list of pairs associating
@@ -83,28 +83,30 @@ function frequencies()
     
 end
 
+-- Função auxiliar para comparar se deve trocar de lugar duas posições
 function compare(a,b)
     return a[2] > b[2]
 end
-        
+
+-- Organiza para ficar maior frequência primeiro e menor frequência por ultimo
+-- PRE: Lista word_freqs em ordem aleatória
+-- POS: Lista word_freqs em ordem do maior para o menor
 function sort()
-    --
-    -- Sorts word_freqs by frequency
-    --
     table.sort(word_freqs, compare)
 end
 
+-- Exibi no prompt as 25 palavras mais usadas e quantas vezes foram usadas
+function print_all()
+    for i=1, 25 do
+        print(word_freqs[i][1] .. "=>" .. word_freqs[i][2])
+    end
+end
 
---
 -- The main function
---
 read_file(arg[1])
 filter_chars_and_normalize()
 scan()
 remove_stop_words()
 frequencies()
 sort()
-
-for i=1, 25 do
-    print(word_freqs[i][1] .. "=>" .. word_freqs[i][2])
-end
+print_all()
