@@ -1,7 +1,7 @@
 -- Titulo: 5-Pipeline
--- Autor: Miguel José Gonçalves da Silva
+-- Autor: Miguel JosÃ© GonÃ§alves da Silva
 -- 03/05/2017
--- Versão 1.1
+-- VersÃ£o 1.1
 -- Linhas: ~116
 
 -- Pega o caminho para um arquivo e retorna todo o conteudo em uma string
@@ -12,9 +12,9 @@ function read_file(path_to_file)
     return io.read("*all")
 end
 
--- Substitui todos os characters não alphanumericos de uma string por espaço
--- PRE: Recebe uma string com characters não alphanúmericos
--- POS: Retorna a string só que com os characters não alphanúmericos trocados por espaço e com os alphanúmericos em minusculo
+-- Substitui todos os characters nÃ£o alphanumericos de uma string por espaÃ§o
+-- PRE: Recebe uma string com characters nÃ£o alphanÃºmericos
+-- POS: Retorna a string sÃ³ que com os characters nÃ£o alphanÃºmericos trocados por espaÃ§o e com os alphanÃºmericos em minusculo
 function filter_chars_and_normalize(str_data)
     return string.lower(string.gsub(str_data, "[^%w]", " "))
 end
@@ -58,8 +58,8 @@ function remove_stop_words(word_list)
     
 end
 
--- Conta o número de vezes que cada palavra ocorre
--- PRE: Recebe a lista de todas as palavras e com repetição
+-- Conta o nÃºmero de vezes que cada palavra ocorre
+-- PRE: Recebe a lista de todas as palavras e com repetiÃ§Ã£o
 -- POS: Faz uma lista com o par [palavra, vezes ocorrida]
 function frequencies(word_list)
     --
@@ -84,21 +84,21 @@ function frequencies(word_list)
     return word_freqs
 end
 
--- Função auxiliar que compara para ver se as palavras precisão trocar de posição
+-- FunÃ§Ã£o auxiliar que compara para ver se as palavras precisÃ£o trocar de posiÃ§Ã£o
 function compare(posicao1,posicao2)
     return posicao1[2] > posicao2[2]
 end
 
--- Responsável por organizar por ordem decrescente a lista de palavra e frequência
--- PRE: Recebe uma lista de pares palavra e frequência desorganizada
--- POS: Retorna a mesma lista recebida porém em ordem decrescente
+-- ResponsÃ¡vel por organizar por ordem decrescente a lista de palavra e frequÃªncia
+-- PRE: Recebe uma lista de pares palavra e frequÃªncia desorganizada
+-- POS: Retorna a mesma lista recebida porÃ©m em ordem decrescente
 function sort(word_freq)
     table.sort(word_freqs, compare)
     
     return word_freq
 end
 
--- Exibi as 25 palavras com maior frequência no console
+-- Exibi as 25 palavras com maior frequÃªncia no console
 -- PRE: Recebe a lista
 -- POS: Exibi as 25 palavras mais frequentes
 function print_all(word_freq)
@@ -113,3 +113,4 @@ end
 
 -- The main function
 print_all(sort(frequencies(remove_stop_words(scan(filter_chars_and_normalize(read_file(arg[1])))))))
+--ver comentarios no pull-request (roxana)
