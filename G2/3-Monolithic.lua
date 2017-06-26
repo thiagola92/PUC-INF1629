@@ -18,6 +18,8 @@ stop_words = {}
 for i in string.gmatch(file, "%w+") do
     stop_words[i] = 1
 end
+
+-- add single-letter words to the stop_words
 one_letter_words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
 for i=1, #one_letter_words do
     stop_words[one_letter_words[i]] = 1
