@@ -1,7 +1,7 @@
 -- Titulo: 3-Monolithic
 -- Autor: Thiago Lages de Alencar
 -- 02/05/2017
--- Versão 1.3
+-- VersÃ£o 1.3
 -- Linhas: ~99
 
 
@@ -9,7 +9,7 @@
 word_freqs = {}
 
 -- Armazenando todas palavras que desejamos ignorar em um Array
--- PRE: Todas as palavras que desajamos ignorar estão armazenadas em "stop_words.txt"
+-- PRE: Todas as palavras que desajamos ignorar estÃ£o armazenadas em "stop_words.txt"
 -- POS: Existe um Array com cada palavra que desejamos ignorar
 io.input("stop_words.txt")
 file = io.read("*all")
@@ -25,7 +25,7 @@ end
 
 -- Passa por cada linha do arquivo que desajamos contar as palavras
 -- PRE: Um arquivo texto grande no qual desejamos saber quais as palavras mais usadas
--- POS: A variavel word_freqs contém todas as palavras e suas frequências em ordem de maior para menor
+-- POS: A variavel word_freqs contÃ©m todas as palavras e suas frequÃªncias em ordem de maior para menor
 io.input(arg[1])
 for line in io.lines() do
     local start_char = nil
@@ -96,3 +96,4 @@ end
 for j=1, 25 do
     print(word_freqs[j][1] .. "=>" .. word_freqs[j][2])
 end
+--ver comentarios no pull-request (roxana)
