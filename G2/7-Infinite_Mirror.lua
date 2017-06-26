@@ -1,12 +1,12 @@
 -- Titulo: 7-Infinite Mirror
--- Autor: Miguel José Gonçalves da Silva
+-- Autor: Miguel JosÃ© GonÃ§alves da Silva
 -- 03/05/2017
--- Versão 1.1
+-- VersÃ£o 1.1
 -- Linhas: ~92
 
--- Lê todas as palavras a serem filtradas no stop_word.txt
--- PRE: As palavras a serem ignoradas estão no stop_word.txt
--- POS: Todas as palavras a serem ignoradas são retornada em uma tabela
+-- LÃª todas as palavras a serem filtradas no stop_word.txt
+-- PRE: As palavras a serem ignoradas estÃ£o no stop_word.txt
+-- POS: Todas as palavras a serem ignoradas sÃ£o retornada em uma tabela
 function read_stop_words()
     io.input("stop_words.txt")
     stop_words = {}
@@ -23,9 +23,9 @@ function read_stop_words()
     return stop_words
 end
 
--- Lê do arquivo txt passado como argumento
+-- LÃª do arquivo txt passado como argumento
 -- PRE: Recebe o caminho pro arquivo txt a ser lido
--- POS: Retorna um array com todas as palavras alphanúmericas no arquivo
+-- POS: Retorna um array com todas as palavras alphanÃºmericas no arquivo
 function read_words(path)
     io.input(path)
     words = {}
@@ -36,14 +36,14 @@ function read_words(path)
     return words
 end
 
--- Função auxiliar para decidir se deve trocar duas palavras de posição
+-- FunÃ§Ã£o auxiliar para decidir se deve trocar duas palavras de posiÃ§Ã£o
 function compare(posicao1,posicao2)
     return posicao1[2] > posicao2[2]
 end
 
--- Conta o número de vezes que cada palavra ocorre, usa recursão
--- PRE: Recebe a lista de palavras, a lista de palavras a serem ignoradas, uma tabela com a palavras contadas até o momento e um indice (para word_list)
--- POS: Preenche wordfreqs com as palavras e frequência delas
+-- Conta o nÃºmero de vezes que cada palavra ocorre, usa recursÃ£o
+-- PRE: Recebe a lista de palavras, a lista de palavras a serem ignoradas, uma tabela com a palavras contadas atÃ© o momento e um indice (para word_list)
+-- POS: Preenche wordfreqs com as palavras e frequÃªncia delas
 function count(word_list, stopwords, wordfreqs, index)
     -- What to do with an empty list
     if index == #word_list + 1 then
@@ -71,8 +71,8 @@ function count(word_list, stopwords, wordfreqs, index)
 end
 
 -- Exibi as 25 palavras que mais aparece em ordem decrescente
--- PRE: Recebe a tabela das palavras e o indice que você vai exibir
--- POS: Exibi no console as palavras e frequências
+-- PRE: Recebe a tabela das palavras e o indice que vocÃª vai exibir
+-- POS: Exibi no console as palavras e frequÃªncias
 function wf_print(wordfreq, index)
     if index == 25 + 1 then
         return
@@ -90,3 +90,4 @@ wordfreqs = {}
 count(word_list, stopwords, wordfreqs, 1)
 table.sort(wordfreqs, compare)
 wf_print(wordfreqs, 1)
+--ver comentarios no pull-request (Roxana)
