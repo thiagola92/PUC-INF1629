@@ -42,6 +42,8 @@ function remove_stop_words()
     for i in string.gmatch(io.read("*all"), "%w+") do
         stop_words[i] = 1
     end
+
+    -- add single-letter words to the stop_words
     one_letter_words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
     for i=1, #one_letter_words do
         stop_words[one_letter_words[i]] = 1
@@ -83,16 +85,11 @@ function frequencies()
     
 end
 
--- Função auxiliar para comparar se deve trocar de lugar duas posições
-function compare(posicao1,posicao2)
-    return posicao1[2] > posicao2[2]
-end
-
 -- Organiza para ficar maior frequência primeiro e menor frequência por ultimo
 -- PRE: Lista word_freqs em ordem aleatória
 -- POS: Lista word_freqs em ordem do maior para o menor
 function sort()
-    table.sort(word_freqs, compare)
+    table.sort(word_freqs, function (position1,position2) return position1[2] > position2[2] end)
 end
 
 -- Exibi no prompt as 25 palavras mais usadas e quantas vezes foram usadas
