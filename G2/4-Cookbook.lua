@@ -1,15 +1,15 @@
 -- Titulo: 4-Cookbook
 -- Autor: Thiago Lages de Alencar
 -- 03/05/2017
--- Versão 1.3
+-- VersÃ£o 1.3
 -- Linhas: ~110
 
--- Toda informação que o programa vai compartilhar entre as funções
+-- Toda informaÃ§Ã£o que o programa vai compartilhar entre as funÃ§Ãµes
 data = {}
 words = {}
 word_freqs = {}
 
--- Lê o arquivo texto que desejamos pegar as palavras mais frequêntes
+-- LÃª o arquivo texto que desejamos pegar as palavras mais frequÃªntes
 -- PRE: data vazio
 -- POS: Todo o texto armazenado em data, em apenas uma string
 function read_file(path_to_file)
@@ -17,24 +17,24 @@ function read_file(path_to_file)
     data = io.read("*all")
 end
 
--- Remove todo characters não alphanumerico
--- PRE: data armzena o texto em uma string com characters não alphanumericos
--- POS: data trocou todos characters não alphanumericos por espaços
+-- Remove todo characters nÃ£o alphanumerico
+-- PRE: data armzena o texto em uma string com characters nÃ£o alphanumericos
+-- POS: data trocou todos characters nÃ£o alphanumericos por espaÃ§os
 function filter_chars_and_normalize()
     data = string.lower(string.gsub(data, "[^%w]", " "))
 end
 
 -- Passa pela a string em data e pega cada palavra e armazena em words
 -- PRE: words vazio e data com uma string
--- POS: words é um Array de todas as palavras que aparecem no texto
+-- POS: words Ã© um Array de todas as palavras que aparecem no texto
 function scan()
     for i in string.gmatch(data, "%w+") do
         words[#words + 1] = i
     end
 end
 
--- Passa pelo Array words removendo palavras que não interessam, ou seja, que estão no stop_words.txt
--- PRE: Palavras que não nos interessam no Array words
+-- Passa pelo Array words removendo palavras que nÃ£o interessam, ou seja, que estÃ£o no stop_words.txt
+-- PRE: Palavras que nÃ£o nos interessam no Array words
 -- POS: Array words sem a palavras no stop_words.txt
 function remove_stop_words()
     io.input("stop_words.txt")
@@ -59,9 +59,9 @@ function remove_stop_words()
     
 end
 
--- Cria uma lista com as palavras e frequência de cada uma delas
+-- Cria uma lista com as palavras e frequÃªncia de cada uma delas
 -- PRE: Array word com todas as palavras que nos interessam e repetidas n vezes
--- POS: Lista de todas palavras com a frequência que são usadas em word_freqs
+-- POS: Lista de todas palavras com a frequÃªncia que sÃ£o usadas em word_freqs
 function frequencies()
     --
     -- Creates a list of pairs associating
@@ -83,13 +83,13 @@ function frequencies()
     
 end
 
--- Função auxiliar para comparar se deve trocar de lugar duas posições
+-- FunÃ§Ã£o auxiliar para comparar se deve trocar de lugar duas posiÃ§Ãµes
 function compare(posicao1,posicao2)
     return posicao1[2] > posicao2[2]
 end
 
--- Organiza para ficar maior frequência primeiro e menor frequência por ultimo
--- PRE: Lista word_freqs em ordem aleatória
+-- Organiza para ficar maior frequÃªncia primeiro e menor frequÃªncia por ultimo
+-- PRE: Lista word_freqs em ordem aleatÃ³ria
 -- POS: Lista word_freqs em ordem do maior para o menor
 function sort()
     table.sort(word_freqs, compare)
@@ -110,3 +110,4 @@ remove_stop_words()
 frequencies()
 sort()
 print_all()
+--ver comentarios no pull-request(Roxana)
