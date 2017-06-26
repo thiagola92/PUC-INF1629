@@ -8,15 +8,13 @@
 -- PRE: As palavras a serem ignoradas estão no stop_word.txt
 -- POS: Todas as palavras a serem ignoradas são retornada em uma tabela
 function read_stop_words()
-    io.open("stop_words.txt").read("*all")
-
     io.input("stop_words.txt")
     stop_words = {}
     for i in string.gmatch(io.read("*all"), "%w+") do
         stop_words[string.lower(i)] = 1
     end
 
-    -- add single-letter words to the stop_words
+    -- add single-letter words
     one_letter_words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
     for i=1, #one_letter_words do
         stop_words[one_letter_words[i]] = 1
@@ -36,6 +34,11 @@ function read_words(path)
     end
     
     return words
+end
+
+-- Função auxiliar para decidir se deve trocar duas palavras de posição
+function compare(posicao1,posicao2)
+    return posicao1[2] > posicao2[2]
 end
 
 -- Conta o número de vezes que cada palavra ocorre, usa recursão
@@ -85,5 +88,5 @@ word_list = read_words(arg[1])
 wordfreqs = {}
 
 count(word_list, stopwords, wordfreqs, 1)
-table.sort(wordfreqs, function (position1,position2) return position1[2] > position2[2] end)
+table.sort(wordfreqs, compare)
 wf_print(wordfreqs, 1)

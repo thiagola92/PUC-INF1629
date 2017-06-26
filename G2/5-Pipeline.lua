@@ -39,8 +39,6 @@ function remove_stop_words(word_list)
     for i in string.gmatch(io.read("*all"), "%w+") do
         stop_words[i] = 1
     end
-
-    -- add single-letter words to the stop_words
     one_letter_words = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
     for i=1, #one_letter_words do
         stop_words[one_letter_words[i]] = 1
@@ -86,11 +84,16 @@ function frequencies(word_list)
     return word_freqs
 end
 
+-- Função auxiliar que compara para ver se as palavras precisão trocar de posição
+function compare(posicao1,posicao2)
+    return posicao1[2] > posicao2[2]
+end
+
 -- Responsável por organizar por ordem decrescente a lista de palavra e frequência
 -- PRE: Recebe uma lista de pares palavra e frequência desorganizada
 -- POS: Retorna a mesma lista recebida porém em ordem decrescente
 function sort(word_freq)
-    table.sort(word_freqs, function (position1,position2) return position1[2] > position2[2] end)
+    table.sort(word_freqs, compare)
     
     return word_freq
 end
