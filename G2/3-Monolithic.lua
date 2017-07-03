@@ -64,9 +64,9 @@ for line in io.lines() do
                 if stop_words[word] == nil then
                     pair_index = 1
                     
-                    for _,v in pairs(word_frequency) do
-                        if word == v[1] then
-                            v[2] = v[2] + 1
+                    for _,value in pairs(word_frequency) do
+                        if word == value[1] then
+                            value[2] = value[2] + 1
                             found = true
                             found_at = pair_index
                             break
