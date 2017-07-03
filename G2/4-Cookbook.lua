@@ -38,8 +38,8 @@ end
 -- Guardaremos a posição de todas palavras em "words" que queremos remover.
 -- Então caminhamos pelo Array "words" e se a palavra existir em "stop_words" guardar o indice dela em um Array "indexes"
 -- No final usamos esses indices armazenados para saber quais palavras remover.
--- PRE: Palavras que não nos interessam no Array words
--- POS: Array words sem a palavras no stop_words.txt
+-- PRE: Palavras que não nos interessam no Array "words"
+-- POS: Array "words" sem a palavras do arquivo "stop_words.txt"
 function remove_stop_words()
     io.input("stop_words.txt")
     local stop_words = {}
