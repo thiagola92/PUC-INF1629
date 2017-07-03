@@ -68,10 +68,10 @@ function frequencies(word_list)
     -- Takes a list of words and returns a dictionary associating
     -- words with frequencies of occurrence
     --
-    word_freqs = {}
+    word_frequency = {}
     for i=1, #word_list do
         found = false
-        for _,v in pairs(word_freqs) do
+        for _,v in pairs(word_frequency) do
             if v[1] == word_list[i] then
                 v[2] = v[2] + 1
                 found = true
@@ -79,31 +79,31 @@ function frequencies(word_list)
             end
         end
         if not found then
-            word_freqs[#word_freqs + 1] = {word_list[i], 1}
+            word_frequency[#word_frequency + 1] = {word_list[i], 1}
         end
     end
     
-    return word_freqs
+    return word_frequency
 end
 
 -- Responsável por organizar por ordem decrescente a lista de palavra e frequência
 -- PRE: Recebe uma lista de pares palavra e frequência desorganizada
 -- POS: Retorna a mesma lista recebida porém em ordem decrescente
-function sort(word_freq)
-    table.sort(word_freqs, function (position1,position2) return position1[2] > position2[2] end)
+function sort(word_frequency)
+    table.sort(word_frequency, function (position1,position2) return position1[2] > position2[2] end)
     
-    return word_freq
+    return word_frequency
 end
 
 -- Exibi as 25 palavras com maior frequência no console
 -- PRE: Recebe a lista
 -- POS: Exibi as 25 palavras mais frequentes
-function print_all(word_freq)
+function print_all(word_frequency)
     --
     -- Takes a list of pairs where the entries are sorted by frequency and print them recursively.
     --
     for i=1, 25 do
-        print(word_freq[i][1] .. "=>" .. word_freq[i][2])
+        print(word_frequency[i][1] .. "=>" .. word_frequency[i][2])
     end
 end
 
